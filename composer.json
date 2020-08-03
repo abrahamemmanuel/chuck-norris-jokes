@@ -13,11 +13,11 @@
   "autoload": {
     "psr-4": {
       "Emmy\\ChukNorrisJokes\\": "src/"
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "Emmy\\ChukNorrisJokes\\Tests\\": "tests/"
-      }
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Emmy\\ChukNorrisJokes\\Tests\\": "tests/"
     }
   },
   "require-dev": {
