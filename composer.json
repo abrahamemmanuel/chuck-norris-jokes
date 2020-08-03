@@ -1,0 +1,26 @@
+{
+  "name": "abrahamemmanuel/chuk-norris-jokes",
+  "description": "Create random chuk norris jokes",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "emmanuel abraham",
+      "email": "sundayemmanuelabraham@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Emmy\\ChukNorrisJokes\\": "src/"
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Emmy\\ChukNorrisJokes\\Tests\\": "tests/"
+      }
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5"
+  }
+}
