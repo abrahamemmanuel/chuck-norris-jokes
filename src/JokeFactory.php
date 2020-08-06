@@ -14,11 +14,11 @@ class JokeFactory
     {
         if ($jokes) {
             $this->jokes = $jokes;
-        };
+        }
     }
 
     public function getRandomJoke()
     {
         return $this->jokes[array_rand($this->jokes)];
-    } 
+    }
 }

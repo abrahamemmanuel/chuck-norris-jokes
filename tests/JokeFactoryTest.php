@@ -22,7 +22,6 @@ class JokeFactoryTest extends TestCase
     /** @test */
     public function it_returns_a_predefined_joke()
     {
-
         $chukNorrisJokes = [
             'Chuck Norris really can get chicken from a tuna can.',
             'Before going to bed, the Boogeyman always checks his closet for Chuck Norris.',
