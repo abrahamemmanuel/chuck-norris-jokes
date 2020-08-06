@@ -20,5 +20,5 @@ class JokeFactory
     public function getRandomJoke()
     {
         return $this->jokes[array_rand($this->jokes)];
-    } 
+    }
 }
