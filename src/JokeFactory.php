@@ -12,15 +12,15 @@ class JokeFactory
 
     public function __construct(Client $client = null)
     {
-       $this->client = $client ?: new Client(); 
+        $this->client = $client ?: new Client();
     }
 
     public function getRandomJoke()
     {
-       $response = $this->client->get(self::API_ENDPOINT);
+        $response = $this->client->get(self::API_ENDPOINT);
 
-       $joke = json_decode($response->getBody()->getContents());
+        $joke = json_decode($response->getBody()->getContents());
 
-       return $joke->value->joke;
+        return $joke->value->joke;
     }
 }
