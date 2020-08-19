@@ -3,6 +3,10 @@
 namespace Emmy\ChukNorrisJokes\Tests;
 
 use Emmy\ChukNorrisJokes\JokeFactory;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 class JokeFactoryTest extends TestCase
@@ -10,28 +14,20 @@ class JokeFactoryTest extends TestCase
     /** @test */
     public function it_returns_a_random_joke()
     {
-        $jokes = new JokeFactory([
-            'This is a joke',
+        // Create a mock and queue two responses.
+        $mock = new MockHandler([
+            new Response(200, [], '{ "type": "success", "value": { "id": 98, "joke": "In the beginning there was nothing...then Chuck Norris Roundhouse kicked that nothing in the face and said &quot;Get a job&quot;. That is the story of the universe.", "categories": [] } }'),
         ]);
 
-        $joke = $jokes->getRandomJoke();
+        $handlerStack = HandlerStack::create($mock);
 
-        $this->assertSame('This is a joke', $joke);
-    }
+        $client = new Client(['handler' => $handlerStack]);
 
-    /** @test */
-    public function it_returns_a_predefined_joke()
-    {
-        $chukNorrisJokes = [
-            'Chuck Norris really can get chicken from a tuna can.',
-            'Before going to bed, the Boogeyman always checks his closet for Chuck Norris.',
-            'Chuck Norris doesn\'t tell lies. He changes facts.',
-        ];
-
-        $jokes = new JokeFactory();
+        $jokes = new JokeFactory($client);
 
         $joke = $jokes->getRandomJoke();
 
-        $this->assertContains($joke, $chukNorrisJokes);
+        $this->assertSame('In the beginning there was nothing...then Chuck Norris Roundhouse kicked that nothing in the face and said &quot;Get a job&quot;. That is the story of the universe.', $joke);
     }
+
 }

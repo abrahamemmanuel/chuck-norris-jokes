@@ -2,23 +2,25 @@
 
 namespace Emmy\ChukNorrisJokes;
 
+use GuzzleHttp\Client;
+
 class JokeFactory
 {
-    protected $jokes = [
-        'Chuck Norris really can get chicken from a tuna can.',
-        'Before going to bed, the Boogeyman always checks his closet for Chuck Norris.',
-        'Chuck Norris doesn\'t tell lies. He changes facts.',
-    ];
+    const API_ENDPOINT = 'http: //api.icndb.com/jokes/random';
 
-    public function __construct(array $jokes = null)
+    protected $client;
+
+    public function __construct(Client $client = null)
     {
-        if ($jokes) {
-            $this->jokes = $jokes;
-        }
+       $this->client = $client ?: new Client(); 
     }
 
     public function getRandomJoke()
     {
-        return $this->jokes[array_rand($this->jokes)];
+       $response = $this->client->get(self::API_ENDPOINT);
+
+       $joke = json_decode($response->getBody()->getContents());
+
+       return $joke->value->joke;
     }
 }
