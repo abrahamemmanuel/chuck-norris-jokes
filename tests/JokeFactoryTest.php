@@ -29,5 +29,4 @@ class JokeFactoryTest extends TestCase
 
         $this->assertSame('In the beginning there was nothing...then Chuck Norris Roundhouse kicked that nothing in the face and said &quot;Get a job&quot;. That is the story of the universe.', $joke);
     }
-
 }
