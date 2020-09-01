@@ -1,19 +1,19 @@
-# Chuk Norris Jokes
+# Chuck Norris Jokes
 
-Create chuk norris jokes in your next php projects.
+Create chuck norris jokes in your next php projects.
 
 ## Installation
 
 Require the package using:
 
 ```bash
-composer require abrahamemmanuel/chuk-norris-jokes
+composer require abrahamemmanuel/chuck-norris-jokes
 ```
 
 ## Usage
 
 ```php
-use Emmy\ChukNorrisJokes\JokeFactory;
+use Emmy\ChuckNorrisJokes\JokeFactory;
 
 $jokes = new JokeFactory();
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Emmy\ChukNorrisJokes\Tests;
+namespace Emmy\ChuckNorrisJokes\Tests;
 
-use Emmy\ChukNorrisJokes\JokeFactory;
+use Emmy\ChuckNorrisJokes\JokeFactory;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
