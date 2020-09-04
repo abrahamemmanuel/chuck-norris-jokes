@@ -8,6 +8,6 @@ class ChuckNorris extends Facade
 {
     protected static function getFacadeAccessor()
     {
-      return 'chuck-norris';
+        return 'chuck-norris';
     }
 }

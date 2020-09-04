@@ -2,7 +2,6 @@
 
 namespace Emmy\ChuckNorrisJokes;
 
-use Emmy\ChuckNorrisJokes\JokeFactory;
 use Illuminate\Support\ServiceProvider;
 use Emmy\ChuckNorrisJokes\Console\ChuckNorrisJoke;
 
