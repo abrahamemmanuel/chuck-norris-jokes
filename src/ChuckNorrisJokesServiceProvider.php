@@ -2,16 +2,16 @@
 
 namespace Emmy\ChuckNorrisJokes;
 
-use Illuminate\Support\ServiceProvider;
 use Emmy\ChuckNorrisJokes\Console\ChuckNorrisJoke;
+use Illuminate\Support\ServiceProvider;
 
 class ChuckNorrisJokesServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        if($this->app->runningInConsole()){
+        if ($this->app->runningInConsole()) {
             $this->commands([
-                ChuckNorrisJoke::class
+                ChuckNorrisJoke::class,
             ]);
         }
     }
