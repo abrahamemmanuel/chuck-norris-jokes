@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquoent\Model;
 
 class Joke extends Model
 {
-  protected $guarded = [];
-  
-  protected $tables = 'jokes';
+    protected $guarded = [];
+
+    protected $tables = 'jokes';
 }
