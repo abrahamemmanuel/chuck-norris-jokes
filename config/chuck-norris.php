@@ -1,5 +1,5 @@
 <?php
 
 return [
-  'route' => '/chuck-norris'
+    'route' => '/chuck-norris',
 ];
