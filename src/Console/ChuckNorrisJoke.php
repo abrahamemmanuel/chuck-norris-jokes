@@ -2,8 +2,8 @@
 
 namespace Emmy\ChuckNorrisJokes\Console;
 
-use Illuminate\Console\Command;
 use Emmy\ChuckNorrisJokes\Facades\ChuckNorris;
+use Illuminate\Console\Command;
 
 class ChuckNorrisJoke extends Command
 {
@@ -13,6 +13,6 @@ class ChuckNorrisJoke extends Command
 
     public function handle()
     {
-      $this->info(ChuckNorris::getRandomJoke());
+        $this->info(ChuckNorris::getRandomJoke());
     }
 }

@@ -51,5 +51,6 @@ class LaravelTest extends TestCase
             ->assertViewIs('chuck-norris::joke')
             ->assertViewHas('joke', 'some joke')
             ->assertStatus(200);
+        $this->assertSame('some joke'.PHP_EOL, $output);
     }
 }
